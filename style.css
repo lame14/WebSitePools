@@ -1,0 +1,19 @@
+body {
+    margin: 0px;
+}
+
+aside {
+    width: 20%;
+}
+
+li {
+    border: 5px solid #03a5fc;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+li a {
+    color: #0a0a0a;
+    font-size: 36px;
+    text-decoration: none;
+}
