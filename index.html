@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Магазин товаров</title>
+    <title>Магазин товарів</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function navigateTo(page) {
+            window.location.href = page + '.html'; // Переход на другую страницу
+        }
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,88 +17,83 @@
             margin: 0;
             padding: 20px;
         }
+        h1 {
+            text-align: center; /* Центрируем заголовок */
+            font-size: 36px; /* Увеличиваем размер заголовка */
+            margin-bottom: 20px; /* Отступ снизу для заголовка */
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px; /* Центрируем логотип */
+            max-width: 200px; /* Максимальная ширина логотипа */
+        }
         .container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-around; /* Располагаем кнопки по бокам друг от друга */
+            margin: 0 auto; /* Центрируем контейнер */
+            max-width: 600px; /* Устанавливаем максимальную ширину */
         }
-        .product {
-            background-color: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-            padding: 20px;
-            width: calc(30% - 40px);
-            text-align: center;
-        }
-        .product h2 {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        .product p {
-            font-size: 16px;
-            color: #28a745;
-        }
-        .product button {
+        .button {
             background-color: #007bff;
             color: white;
             border: none;
             border-radius: 5px;
-            padding: 10px;
+            padding: 20px 40px; /* Увеличиваем размер кнопки */
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-size: 20px; /* Увеличиваем размер шрифта для кнопки */
+            margin: 10px; /* Отступ между кнопками */
+            transition: background-color 0.3s; /* Переход при наведении */
         }
-        .product button:hover {
-            background-color: #0056b3;
+        .button:hover {
+            background-color: #0056b3; /* Изменяем цвет кнопки при наведении */
+        }
+        .reviews {
+            margin-top: 40px; /* Отступ сверху для секции отзывов */
+            background-color: #ffffff; /* Цвет фона для блока с отзывами */
+            border-radius: 5px; /* Скругление углов */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+            padding: 20px; /* Отступы внутри блока */
+        }
+        .review {
+            margin-bottom: 20px; /* Отступ между отзывами */
+            font-size: 16px; /* Размер шрифта для отзыва */
+            color: #555; /* Цвет текста отзыва */
+        }
+        .review-author {
+            font-weight: bold; /* Жирный шрифт для имени автора */
+            margin-top: 5px; /* Отступ сверху для имени автора */
+            font-size: 14px; /* Размер шрифта для имени автора */
+            color: #007bff; /* Цвет имени автора */
         }
     </style>
 </head>
 <body>
 
+    <h1>Swimming Pools</h1> <!-- Заголовок -->
+    <img src="depositphotos_23428992-stock-illustration-a-swimming-pool-removebg-preview(1).png" alt="Логотип" class="logo"> <!-- Логотип -->
 
-<aside>
-        <h1>SwimmingPools</h1>
-        <img src="logo.jpg" alt="">
-        <ul>
-            <li><a href="#">Про нас</a></li>
-        </ul>
-
-
-
-    </aside>
-
-    <h1>Товары</h1>
     <div class="container">
-        <div class="product">
-            <h2>Товар 1</h2>
-            <p>Цена: 1000 руб.</p>
-            <button>Заказать</button>
+        <button class="button" onclick="navigateTo('products')">Товари</button> <!-- Кнопка "Товари" -->
+        <button class="button" onclick="navigateTo('about')">Про нас</button> <!-- Кнопка "Про нас" -->
+    </div>
+
+    <div class="reviews">
+        <h2>Відгуки</h2> <!-- Заголовок секции отзывов -->
+        <div class="review">
+            "Відмінна компанія! Я не пожалів, що звернувся до них!"
+            <div class="review-author">— Іван</div> <!-- Никнейм автора -->
         </div>
-        <div class="product">
-            <h2>Товар 2</h2>
-            <p>Цена: 1500 руб.</p>
-            <button>Заказать</button>
+        <div class="review">
+            "Басейн став чудовим доповненням до мого двору. Рекомендую!"
+            <div class="review-author">— Олена</div> <!-- Никнейм автора -->
         </div>
-        <div class="product">
-            <h2>Товар 3</h2>
-            <p>Цена: 2000 руб.</p>
-            <button>Заказать</button>
+        <div class="review">
+            "Професіонали своєї справи. Задоволений результатом!"
+            <div class="review-author">— Сергій</div> <!-- Никнейм автора -->
         </div>
-        <div class="product">
-            <h2>Товар 4</h2>
-            <p>Цена: 1200 руб.</p>
-            <button>Заказать</button>
-        </div>
-        <div class="product">
-            <h2>Товар 5</h2>
-            <p>Цена: 800 руб.</p>
-            <button>Заказать</button>
-        </div>
-        <div class="product">
-            <h2>Товар 6</h2>
-            <p>Цена: 1800 руб.</p>
-            <button>Заказать</button>
+        <div class="review">
+            "Швидко, якісно та недорого. Дякую!"
+            <div class="review-author">— Катерина</div> <!-- Никнейм автора -->
         </div>
     </div>
 

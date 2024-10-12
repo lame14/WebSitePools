@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ Форма 1</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            text-align: center; /* Центрируем текст */
+        }
+        h1 {
+            font-size: 24px; /* Размер заголовка */
+            margin-bottom: 20px; /* Отступ снизу для заголовка */
+        }
+        .depth-selector {
+            margin: 10px; /* Отступ для кнопок */
+        }
+        .depth-button {
+            background-color: #007bff; /* Цвет кнопки */
+            color: white; /* Цвет текста */
+            border: none;
+            border-radius: 50%; /* Круглая форма */
+            width: 50px; /* Ширина кнопки */
+            height: 50px; /* Высота кнопки */
+            cursor: pointer; /* Указатель при наведении */
+            transition: background-color 0.3s; /* Плавный переход цвета */
+        }
+        .depth-button:hover {
+            background-color: #0056b3; /* Цвет при наведении */
+        }
+        .submit-button {
+            background-color: #28a745; /* Цвет кнопки "Оформить" */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px; /* Отступы внутри кнопки */
+            cursor: pointer;
+            margin-top: 20px; /* Отступ сверху */
+        }
+        .submit-button:hover {
+            background-color: #218838; /* Цвет при наведении */
+        }
+        .thank-you {
+            display: none; /* Скрываем сообщение по умолчанию */
+            margin-top: 20px; /* Отступ сверху */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Выберите глубину для Форма 1</h1>
+
+    <div class="depth-selector">
+        <button class="depth-button" onclick="selectDepth('1.2m')">1.2m</button>
+        <button class="depth-button" onclick="selectDepth('1.5m')">1.5m</button>
+        <button class="depth-button" onclick="selectDepth('1.8m')">1.8m</button>
+    </div>
+
+    <button class="submit-button" onclick="submitOrder()">Оформить</button>
+
+    <div class="thank-you" id="thankYouMessage">
+        <h2>Спасибо за ваш заказ!</h2>
+        <button class="back-button" onclick="goBack()">Назад на главную</button>
+    </div>
+
+    <script>
+        let selectedDepth = '';
+
+        function selectDepth(depth) {
+            selectedDepth = depth;
+            alert('Вы выбрали глубину: ' + depth); // Можно убрать или изменить на визуальный элемент
+        }
+
+        function submitOrder() {
+            if (selectedDepth) {
+                document.getElementById('thankYouMessage').style.display = 'block'; // Показываем сообщение
+            } else {
+                alert('Пожалуйста, выберите глубину!'); // Предупреждение, если глубина не выбрана
+            }
+        }
+
+        function goBack() {
+            window.location.href = 'index.html'; // Возвращаем на главную страницу
+        }
+    </script>
+
+</body>
+</html>
