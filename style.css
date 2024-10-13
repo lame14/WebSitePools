@@ -1,48 +1,135 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #e9ecef;
     margin: 0;
     padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+}
+
+.nav-button {
+    background-color: white;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: scale(1.05);
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; /* Исправлено для лучшего выравнивания */
+    margin-top: 20px;
 }
 
-.product {
-    background-color: #ffffff;
-    border: 1px solid #dee2e6; /* Рамка вокруг товара */
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+.product-card {
+    background-color: white;
+    border: 2px solid #007bff;
+    border-radius: 10px;
     padding: 20px;
-    width: calc(30% - 40px);
+    margin: 15px;
+    width: 300px; /* Установлено фиксированное значение ширины */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Плавный эффект при наведении */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Подъем карточки при наведении */
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.order-button {
+    background-color: #28a745;
+    color: white;
+    border: 2px solid #007bff; /* Добавлена синяя рамка */
+    border-radius: 5px;
+    padding: 15px; /* Увеличен размер кнопки */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.order-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+footer {
     text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    position: relative;
 }
 
-.product h2 {
-    font-size: 18px;
+/* Добавление стилей для отзывов */
+.reviews-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-card {
+    background-color: #ffffff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 10px;
     margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.product p {
-    font-size: 16px;
-    color: #28a745;
+.rating {
+    color: #FFD700; /* Цвет звезд */
+}
+.depth-selection {
+    margin: 20px 0;
 }
 
-.product button {
+.depth-button {
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 15px;
+    margin: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.product button:hover {
+.depth-button:hover {
     background-color: #0056b3;
-    border-color: #004085;
+    transform: scale(1.05);
 }

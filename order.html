@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Підтвердження замовлення</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Виберіть глибину басейну</h1>
+    <div class="depth-selection">
+        <button class="depth-button" onclick="selectDepth('1 м')">1 м</button>
+        <button class="depth-button" onclick="selectDepth('1.5 м')">1.5 м</button>
+        <button class="depth-button" onclick="selectDepth('2 м')">2 м</button>
+    </div>
+
+    <div id="order-confirmation" style="display: none;">
+        <h2>Дякуємо за ваше замовлення!</h2>
+        <p>Ваше замовлення обробляється, і ми зв'яжемося з вами найближчим часом.</p>
+        <p id="selected-depth"></p>
+        <div class="back-button" onclick="navigateTo('products')">← Повернутися до товарів</div>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page + '.html';
+        }
+
+        function selectDepth(depth) {
+            document.getElementById('selected-depth').innerText = 'Вибрана глибина басейну: ' + depth;
+            document.querySelector('.depth-selection').style.display = 'none';
+            document.getElementById('order-confirmation').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

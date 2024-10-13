@@ -3,99 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Магазин товарів</title>
+    <title>Головна</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function navigateTo(page) {
-            window.location.href = page + '.html'; // Переход на другую страницу
-        }
-    </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center; /* Центрируем заголовок */
-            font-size: 36px; /* Увеличиваем размер заголовка */
-            margin-bottom: 20px; /* Отступ снизу для заголовка */
-        }
-        .logo {
-            display: block;
-            margin: 0 auto 20px; /* Центрируем логотип */
-            max-width: 200px; /* Максимальная ширина логотипа */
-        }
-        .container {
-            display: flex;
-            justify-content: space-around; /* Располагаем кнопки по бокам друг от друга */
-            margin: 0 auto; /* Центрируем контейнер */
-            max-width: 600px; /* Устанавливаем максимальную ширину */
-        }
-        .button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 20px 40px; /* Увеличиваем размер кнопки */
-            cursor: pointer;
-            font-size: 20px; /* Увеличиваем размер шрифта для кнопки */
-            margin: 10px; /* Отступ между кнопками */
-            transition: background-color 0.3s; /* Переход при наведении */
-        }
-        .button:hover {
-            background-color: #0056b3; /* Изменяем цвет кнопки при наведении */
-        }
-        .reviews {
-            margin-top: 40px; /* Отступ сверху для секции отзывов */
-            background-color: #ffffff; /* Цвет фона для блока с отзывами */
-            border-radius: 5px; /* Скругление углов */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
-            padding: 20px; /* Отступы внутри блока */
-        }
-        .review {
-            margin-bottom: 20px; /* Отступ между отзывами */
-            font-size: 16px; /* Размер шрифта для отзыва */
-            color: #555; /* Цвет текста отзыва */
-        }
-        .review-author {
-            font-weight: bold; /* Жирный шрифт для имени автора */
-            margin-top: 5px; /* Отступ сверху для имени автора */
-            font-size: 14px; /* Размер шрифта для имени автора */
-            color: #007bff; /* Цвет имени автора */
-        }
-    </style>
 </head>
 <body>
-
-    <h1>Swimming Pools</h1> <!-- Заголовок -->
-    <img src="depositphotos_23428992-stock-illustration-a-swimming-pool-removebg-preview(1).png" alt="Логотип" class="logo"> <!-- Логотип -->
-
-    <div class="container">
-        <button class="button" onclick="navigateTo('products')">Товари</button> <!-- Кнопка "Товари" -->
-        <button class="button" onclick="navigateTo('about')">Про нас</button> <!-- Кнопка "Про нас" -->
-    </div>
-
-    <div class="reviews">
-        <h2>Відгуки</h2> <!-- Заголовок секции отзывов -->
-        <div class="review">
-            "Відмінна компанія! Я не пожалів, що звернувся до них!"
-            <div class="review-author">— Іван</div> <!-- Никнейм автора -->
+    <header>
+        <div class="logo-container">
+            <h1 class="logo">Магазин Бассейнів</h1>
         </div>
-        <div class="review">
-            "Басейн став чудовим доповненням до мого двору. Рекомендую!"
-            <div class="review-author">— Олена</div> <!-- Никнейм автора -->
-        </div>
-        <div class="review">
-            "Професіонали своєї справи. Задоволений результатом!"
-            <div class="review-author">— Сергій</div> <!-- Никнейм автора -->
-        </div>
-        <div class="review">
-            "Швидко, якісно та недорого. Дякую!"
-            <div class="review-author">— Катерина</div> <!-- Никнейм автора -->
-        </div>
-    </div>
+        <nav class="navbar">
+            <button onclick="navigateTo('products')" class="nav-button">Товари</button>
+            <button onclick="navigateTo('about')" class="nav-button">Про нас</button>
+        </nav>
+    </header>
 
+    <main>
+        <section class="hero-section">
+            <h2>Ласкаво просимо до нашого магазину!</h2>
+            <p>Купуйте найкращі басейни за вигідними цінами!</p>
+            <button class="hero-button" onclick="navigateTo('products')">Переглянути Товари</button>
+        </section>
+
+        <section class="reviews-section">
+            <h2>Відгуки наших клієнтів</h2>
+            <div class="review-card">
+                <p>Чудовий сервіс! Басейн виявився ідеальним для нашої сім'ї.</p>
+                <span class="rating">⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="review-card">
+                <p>Дуже задоволені покупкою, все як описано.</p>
+                <span class="rating">⭐⭐⭐⭐</span>
+            </div>
+            <div class="review-card">
+                <p>Басейн був доставлений вчасно. Рекомендуємо!</p>
+                <span class="rating">⭐⭐⭐⭐⭐</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Магазин Бассейнів. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page + '.html'; // Переход на іншу сторінку
+        }
+    </script>
 </body>
 </html>

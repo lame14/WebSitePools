@@ -3,159 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Товари - Магазин товарів</title>
+    <title>Товари</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function orderProduct(product) {
-            window.location.href = product + '.html';
-        }
-
-        function goBack() {
-            window.location.href = 'index.html'; // Перенаправляем на основную страницу
-        }
-    </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center; /* Центрируем заголовок */
-            font-size: 36px; /* Увеличиваем размер заголовка */
-            margin-bottom: 20px; /* Отступ снизу для заголовка */
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between; /* Равномерное распределение товаров */
-        }
-        .product {
-            background-color: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-            padding: 20px;
-            width: calc(30% - 40px); /* Ширина товара с учетом отступов */
-            text-align: center;
-            height: 320px; /* Устанавливаем фиксированную высоту для всех карточек */
-        }
-        .product h2 {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        .product p {
-            font-size: 16px;
-            color: #28a745;
-        }
-        .product img {
-            max-width: 100%; /* Ограничиваем ширину изображения */
-            height: 150px; /* Устанавливаем фиксированную высоту для изображений */
-            object-fit: cover; /* Сохраняем пропорции и обрезаем изображение при необходимости */
-            margin-bottom: 10px; /* Отступ снизу для изображения */
-        }
-        .product button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s, border 0.3s; /* Переходы для фона и рамки */
-            border: 2px solid transparent; /* Начальная прозрачная рамка */
-            margin-top: 10px; /* Отступ сверху для кнопки */
-            display: block; /* Устанавливаем кнопке блочный уровень */
-            width: 100%; /* Ширина кнопки 100% */
-        }
-        .product button:hover {
-            background-color: #0056b3;
-            border: 2px solid #0056b3; /* Устанавливаем рамку при наведении */
-        }
-        .product .description {
-            margin-top: 10px; /* Отступ сверху для текста описания */
-            font-size: 14px; /* Размер шрифта для описания */
-            color: #555; /* Цвет текста описания */
-            font-weight: 900; /* Устанавливаем очень жирный шрифт для описания */
-            height: 40px; /* Ограничиваем высоту описания */
-            overflow: hidden; /* Прячем переполнение */
-            text-overflow: ellipsis; /* Добавляем многоточие для длинного текста */
-            display: -webkit-box; /* Используем для ограничения по строкам */
-            -webkit-line-clamp: 2; /* Ограничиваем количество строк */
-            -webkit-box-orient: vertical; /* Устанавливаем вертикальную ориентацию */
-        }
-        .back-button {
-            background-color: transparent; /* Прозрачный фон */
-            color: #007bff; /* Цвет текста */
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            cursor: pointer;
-            display: flex; /* Используем flex для выравнивания */
-            align-items: center; /* Выравнивание по центру по вертикали */
-            font-size: 16px; /* Размер шрифта */
-            margin: 20px 0; /* Отступ сверху и снизу для кнопки */
-        }
-        .back-button:hover {
-            text-decoration: underline; /* Подчеркивание при наведении */
-        }
-        .back-button::before {
-            content: '←'; /* Стрелка перед текстом */
-            margin-right: 5px; /* Отступ между стрелкой и текстом */
-            font-size: 20px; /* Размер стрелки */
-        }
-    </style>
 </head>
 <body>
+    <header>
+        <div class="logo-container">
+            <h1 class="logo">Магазин Бассейнів</h1>
+        </div>
+        <nav class="navbar">
+            <button onclick="navigateTo('index')" class="nav-button">Головна</button>
+            <button onclick="navigateTo('about')" class="nav-button">Про нас</button>
+        </nav>
+    </header>
 
-    <h1>Товари</h1>
-    <div class="container">
-        <div class="product">
-            <h2>Форма 1</h2>
-            <p>Ціна: 70$</p>
-            <img src="images (2).jpg" alt=""> <!-- Изображение товара -->
-            <button onclick="orderProduct('product1')">Заказать</button> <!-- Кнопка под изображением -->
-            <p class="description">Якщо бажаєте мати бассейн, але жаба давить затрачуватись, цей варіант для вас.</p> <!-- Текст под товаром -->
+    <main>
+        <h1>Товари</h1>
+        <div class="container">
+            <div class="product-card">
+                <img src="images (2).jpg" alt="Басейн 1">
+                <h2>Басейн 1</h2>
+                <p>Цей басейн ідеально підходить для великих сімей та вечірок.</p>
+                <p>Ціна: 20000 грн</p>
+                <button onclick="navigateTo('order')" class="order-button">Замовити</button>
+            </div>
+            <div class="product-card">
+                <img src="форма 2.jpg" alt="Басейн 2">
+                <h2>Басейн 2</h2>
+                <p>Зручний та простий у використанні, ідеальний для дітей.</p>
+                <p>Ціна: 15000 грн</p>
+                <button onclick="navigateTo('order')" class="order-button">Замовити</button>
+            </div>
+            <div class="product-card">
+                <img src="Форма 3.png" alt="Басейн 3">
+                <h2>Басейн 3</h2>
+                <p>Чудовий вибір для маленьких ділянок.</p>
+                <p>Ціна: 18000 грн</p>
+                <button onclick="navigateTo('order')" class="order-button">Замовити</button>
+            </div>
+            <div class="product-card">
+                <img src="pool 4.jpg" alt="Басейн 4">
+                <h2>Басейн 4</h2>
+                <p>Стильний та елегантний басейн для вашого двору.</p>
+                <p>Ціна: 22000 грн</p>
+                <button onclick="navigateTo('order')" class="order-button">Замовити</button>
+            </div>
+            <div class="product-card">
+                <img src="pool 5.webp" alt="Басейн 5">
+                <h2>Басейн 5</h2>
+                <p>Ідеальний варіант для відпочинку на природі.</p>
+                <p>Ціна: 25000 грн</p>
+                <button onclick="navigateTo('order')" class="order-button">Замовити</button>
+            </div>
+            <div class="product-card">
+                <img src="pool 6.jpg" alt="Басейн 6">
+                <h2>Басейн 6</h2>
+                <p>Чудовий вибір для родинних відпочинків.</p>
+                <p>Ціна: 27000 грн</p>
+                <button onclick="navigateTo('order')" class="order-button">Замовити</button>
+            </div>
         </div>
-        <div class="product">
-            <h2>Форма 2</h2>
-            <p>Ціна: 200$</p>
-            <img src="форма 2.jpg" alt=""> <!-- Изображение товара -->
-            <button onclick="orderProduct('product2')">Заказать</button> <!-- Кнопка под изображением -->
-            <p class="description">Теж хороший варіант,але не маэ сходинок та перил.</p> <!-- Текст под товаром -->
-        </div>
-        <div class="product">
-            <h2>Форма 3</h2>
-            <p>Ціна: 300$</p>
-            <img src="Форма 3.png" alt=""> <!-- Изображение товара -->
-            <button onclick="orderProduct('product3')">Заказать</button> <!-- Кнопка под изображением -->
-            <p class="description">Дуже гарний варіант. Має сходинки та перила.</p> <!-- Текст под товаром -->
-        </div>
-        <div class="product">
-            <h2>Форма 4</h2>
-            <p>Ціна: 420$</p>
-            <img src="pool 4.jpg" alt=""> <!-- Изображение товара -->
-            <button onclick="orderProduct('product4')">Заказать</button> <!-- Кнопка под изображением -->
-            <p class="description">Це ідеальний варіант для вашого двору з простим дизайном.</p> <!-- Описание товара -->
-        </div>
-        <div class="product">
-            <h2>Форма 5</h2>
-            <p>Ціна: 480$</p>
-            <img src="pool 5.webp" alt=""> <!-- Изображение товара -->
-            <button onclick="orderProduct('product5')">Заказать</button> <!-- Кнопка под изображением -->
-            <p class="description">Сучасний дизайн з просторим простором для відпочинку.</p> <!-- Описание товара -->
-        </div>
-        <div class="product">
-            <h2>Форма 6</h2>
-            <p>Ціна: 1300$</p>
-            <img src="pool 6.jpg" alt=""> <!-- Изображение товара -->
-            <button onclick="orderProduct('product6')">Заказать</button> <!-- Кнопка под изображением -->
-            <p class="description">Ідеальний вибір для великої родини з комфортом, гідний своїх грошей.</p> <!-- Описание товара -->
-        </div>
-    </div>
+    </main>
 
-    <button class="back-button" onclick="goBack()">Назад</button> <!-- Кнопка для возврата -->
+    <footer>
+        <p>© 2024 Магазин Бассейнів. Всі права захищені.</p>
+    </footer>
 
+    <script>
+        function navigateTo(page) {
+            window.location.href = page + '.html'; // Переход на іншу сторінку
+        }
+    </script>
 </body>
 </html>
