@@ -3,33 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Підтвердження замовлення</title>
+    <title>Замовлення</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Виберіть глибину басейну</h1>
-    <div class="depth-selection">
-        <button class="depth-button" onclick="selectDepth('1 м')">1 м</button>
-        <button class="depth-button" onclick="selectDepth('1.5 м')">1.5 м</button>
-        <button class="depth-button" onclick="selectDepth('2 м')">2 м</button>
-    </div>
+    <header>
+        <div class="logo-container">
+            <img src="depositphotos_23428992-stock-illustration-a-swimming-pool-removebg-preview(1).png" alt="Логотип" class="logo-img">
+            <h1 class="logo-text">Магазин Бассейнів</h1>
+        </div>
+        <nav class="navbar">
+            <button onclick="navigateTo('index')" class="nav-button">Головна</button>
+            <button onclick="navigateTo('products')" class="nav-button">Товари</button>
+        </nav>
+    </header>
 
-    <div id="order-confirmation" style="display: none;">
-        <h2>Дякуємо за ваше замовлення!</h2>
-        <p>Ваше замовлення обробляється, і ми зв'яжемося з вами найближчим часом.</p>
-        <p id="selected-depth"></p>
-        <div class="back-button" onclick="navigateTo('products')">← Повернутися до товарів</div>
-    </div>
+    <main>
+        <h2>Замовлення</h2>
+        <div class="order-form">
+            <label for="product">Виберіть товар:</label>
+            <select id="product">
+                <option value="Басейн 1">Басейн 1</option>
+                <option value="Басейн 2">Басейн 2</option>
+                <option value="Басейн 3">Басейн 3</option>
+                <option value="Басейн 4">Басейн 4</option>
+                <option value="Басейн 5">Басейн 5</option>
+                <option value="Басейн 6">Басейн 6</option>
+            </select>
+
+            <label for="depth">Виберіть глибину:</label>
+            <select id="depth">
+                <option value="1.0">1.0 м</option>
+                <option value="1.5">1.5 м</option>
+                <option value="2.0">2.0 м</option>
+                <option value="2.5">2.5 м</option>
+            </select>
+
+            <label for="quantity">Кількість:</label>
+            <input type="number" id="quantity" value="1" min="1">
+
+            <button class="order-button" onclick="submitOrder()">Замовити</button>
+        </div>
+
+        <button class="back-button" onclick="navigateTo('products')">Назад</button>
+    </main>
+
+    <footer>
+        <p>© 2024 Магазин Бассейнів. Всі права захищені.</p>
+    </footer>
 
     <script>
         function navigateTo(page) {
-            window.location.href = page + '.html';
+            window.location.href = page + '.html'; // Переход на іншу сторінку
         }
 
-        function selectDepth(depth) {
-            document.getElementById('selected-depth').innerText = 'Вибрана глибина басейну: ' + depth;
-            document.querySelector('.depth-selection').style.display = 'none';
-            document.getElementById('order-confirmation').style.display = 'block';
+        function submitOrder() {
+            const product = document.getElementById('product').value;
+            const depth = document.getElementById('depth').value;
+            const quantity = document.getElementById('quantity').value;
+
+            alert(`Ваше замовлення на ${quantity} ${product} з глибиною ${depth} м успішно оформлено!`);
         }
     </script>
 </body>

@@ -9,7 +9,8 @@
 <body>
     <header>
         <div class="logo-container">
-            <h1 class="logo">Магазин Бассейнів</h1>
+            <img src="depositphotos_23428992-stock-illustration-a-swimming-pool-removebg-preview(1).png" alt="Логотип" class="logo-img">
+            <h1 class="logo-text">Магазин Бассейнів</h1>
         </div>
         <nav class="navbar">
             <button onclick="navigateTo('index')" class="nav-button">Головна</button>
@@ -18,51 +19,50 @@
     </header>
 
     <main>
-        <h1>Товари</h1>
-        <div class="container">
-            <div class="product-card">
-                <img src="images (2).jpg" alt="Басейн 1">
-                <h2>Басейн 1</h2>
-                <p>Цей басейн ідеально підходить для великих сімей та вечірок.</p>
-                <p>Ціна: 20000 грн</p>
-                <button onclick="navigateTo('order')" class="order-button">Замовити</button>
+        <section class="hero-section">
+            <h2 class="welcome-heading">Ласкаво просимо до нашого магазину!</h2>
+        </section>
+
+        <section class="products-section">
+            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+                <img src="images (2).jpg" alt="Товар 1" class="product-image">
+                <h3>Товар 1</h3>
+                <p class="price">$100</p>
+                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
-            <div class="product-card">
-                <img src="форма 2.jpg" alt="Басейн 2">
-                <h2>Басейн 2</h2>
-                <p>Зручний та простий у використанні, ідеальний для дітей.</p>
-                <p>Ціна: 15000 грн</p>
-                <button onclick="navigateTo('order')" class="order-button">Замовити</button>
+            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+                <img src="форма 2.jpg" alt="Товар 2" class="product-image">
+                <h3>Товар 2</h3>
+                <p class="price">$150</p>
+                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
-            <div class="product-card">
-                <img src="Форма 3.png" alt="Басейн 3">
-                <h2>Басейн 3</h2>
-                <p>Чудовий вибір для маленьких ділянок.</p>
-                <p>Ціна: 18000 грн</p>
-                <button onclick="navigateTo('order')" class="order-button">Замовити</button>
+            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+                <img src="Форма 3.png" alt="Товар 3" class="product-image">
+                <h3>Товар 3</h3>
+                <p class="price">$200</p>
+                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
-            <div class="product-card">
-                <img src="pool 4.jpg" alt="Басейн 4">
-                <h2>Басейн 4</h2>
-                <p>Стильний та елегантний басейн для вашого двору.</p>
-                <p>Ціна: 22000 грн</p>
-                <button onclick="navigateTo('order')" class="order-button">Замовити</button>
+            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+                <img src="pool 4.jpg" alt="Товар 4" class="product-image">
+                <h3>Товар 4</h3>
+                <p class="price">$250</p>
+                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
-            <div class="product-card">
-                <img src="pool 5.webp" alt="Басейн 5">
-                <h2>Басейн 5</h2>
-                <p>Ідеальний варіант для відпочинку на природі.</p>
-                <p>Ціна: 25000 грн</p>
-                <button onclick="navigateTo('order')" class="order-button">Замовити</button>
+            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+                <img src="pool 5.webp" alt="Товар 5" class="product-image">
+                <h3>Товар 5</h3>
+                <p class="price">$300</p>
+                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
-            <div class="product-card">
-                <img src="pool 6.jpg" alt="Басейн 6">
-                <h2>Басейн 6</h2>
-                <p>Чудовий вибір для родинних відпочинків.</p>
-                <p>Ціна: 27000 грн</p>
-                <button onclick="navigateTo('order')" class="order-button">Замовити</button>
+            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+                <img src="pool 6.jpg" alt="Товар 6" class="product-image">
+                <h3>Товар 6</h3>
+                <p class="price">$350</p>
+                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
-        </div>
+        </section>
+
+        <button class="back-button" onclick="navigateTo('index')">Назад</button>
     </main>
 
     <footer>
