@@ -20,15 +20,20 @@
 
     <main>
         <h2>Замовлення</h2>
+        <div class="order-info">
+            <img id="product-image" src="" alt="Фото продукту" class="product-image-order">
+            <p id="product-description" class="product-description"></p>
+        </div>
+
         <div class="order-form">
             <label for="product">Виберіть товар:</label>
-            <select id="product">
-                <option value="Басейн 1">Басейн 1</option>
-                <option value="Басейн 2">Басейн 2</option>
-                <option value="Басейн 3">Басейн 3</option>
-                <option value="Басейн 4">Басейн 4</option>
-                <option value="Басейн 5">Басейн 5</option>
-                <option value="Басейн 6">Басейн 6</option>
+            <select id="product" onchange="updateProductInfo()">
+                <option value="Басейн 1" data-image="images (2).jpg" data-description="Басейн 1 — ідеальний вибір для вашої сім’ї.">Басейн 1</option>
+                <option value="Басейн 2" data-image="форма 2.jpg" data-description="Басейн 2 — це ваш відпочинок влітку!">Басейн 2</option>
+                <option value="Басейн 3" data-image="Форма 3.png" data-description="Басейн 3 — ваш персональний курорт на задньому дворі!">Басейн 3</option>
+                <option value="Басейн 4" data-image="pool 4.jpg" data-description="Басейн 4 — втілення стилю і функціональності.">Басейн 4</option>
+                <option value="Басейн 5" data-image="pool 5.webp" data-description="Басейн 5 — це поєднання розкоші і доступності.">Басейн 5</option>
+                <option value="Басейн 6" data-image="pool 6.jpg" data-description="Басейн 6 — ваш ідеальний вибір для активного відпочинку!">Басейн 6</option>
             </select>
 
             <label for="depth">Виберіть глибину:</label>
@@ -45,7 +50,7 @@
             <button class="order-button" onclick="submitOrder()">Замовити</button>
         </div>
 
-        <button class="back-button" onclick="navigateTo('products')">Назад</button>
+        <button class="back-button" onclick="navigateTo('products')">&#8592;</button> <!-- Стрелка влево -->
     </main>
 
     <footer>
@@ -57,6 +62,16 @@
             window.location.href = page + '.html'; // Переход на іншу сторінку
         }
 
+        function updateProductInfo() {
+            const select = document.getElementById('product');
+            const selectedOption = select.options[select.selectedIndex];
+            const image = selectedOption.getAttribute('data-image');
+            const description = selectedOption.getAttribute('data-description');
+
+            document.getElementById('product-image').src = image;
+            document.getElementById('product-description').textContent = description;
+        }
+
         function submitOrder() {
             const product = document.getElementById('product').value;
             const depth = document.getElementById('depth').value;
@@ -64,6 +79,9 @@
 
             alert(`Ваше замовлення на ${quantity} ${product} з глибиною ${depth} м успішно оформлено!`);
         }
+
+        // Обновляем информацию о продукте при загрузке страницы
+        window.onload = updateProductInfo;
     </script>
 </body>
 </html>

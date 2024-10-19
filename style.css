@@ -38,7 +38,7 @@ header {
 }
 
 .logo-img {
-    max-width: 120px; /* Уменьшен размер логотипа */
+    max-width: 120px;
     margin-top: 10px;
     height: auto;
     transition: transform 0.3s ease;
@@ -72,58 +72,46 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.hero-section {
-    text-align: center; /* Центрирование заголовка */
-    margin: 20px 0; /* Отступ сверху и снизу */
-}
-
-.welcome-heading {
-    font-size: 24px; /* Размер шрифта для приветственного заголовка */
-    margin: 0; /* Убираем отступы */
-    animation: fadeIn 0.5s ease;
-}
-
 .products-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Распределение карточек по ширине */
-    margin-top: 20px; /* Отступ для секции товаров */
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 .product-card {
-    border: 1px solid #007bff;
+    border: 2px solid #007bff;
     border-radius: 10px;
     padding: 15px;
     text-align: center;
-    margin: 10px; /* Отступ между карточками */
+    margin: 10px;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: calc(33.333% - 20px); /* Ширина карточки для 3 в ряд с учетом отступов */
-    height: 400px; /* Фиксированная высота карточки */
-    box-sizing: border-box; /* Учитывать отступы в ширине */
-    transition: transform 0.3s;
-}
-
-.product-card:hover {
-    transform: translateY(-5px); /* Эффект подъема при наведении */
+    width: calc(33.333% - 20px);
+    height: 450px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-image {
-    width: 100%;
-    height: 200px; /* Фиксированная высота для изображения */
-    object-fit: cover;
-    border-radius: 10px; /* Закругленные углы для изображения */
-    transition: transform 0.3s;
+    width: 80%; /* Увеличена ширина изображения для лучшего отображения */
+    max-width: 300px; /* Максимальная ширина */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    margin: 0 auto; /* Центрирование изображения */
+    border-radius: 10px;
+    margin-bottom: 10px; /* Отступ снизу изображения */
 }
 
 .product-image:hover {
-    transform: scale(1.05); /* Увеличение изображения при наведении */
+    transform: scale(1.05);
 }
 
 .price {
     font-size: 1.5em;
     margin: 10px 0;
-    color: #28a745; /* Зеленый цвет для цены */
+    color: #28a745;
 }
 
 .order-button {
@@ -134,32 +122,42 @@ header {
     padding: 15px 30px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    height: 50px;
+    margin-top: auto;
 }
 
 .order-button:hover {
     background-color: #218838;
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Изменения для кнопки назад */
 .back-button {
-    background-color: #007bff;
-    color: white;
+    background-color: transparent;
     border: none;
-    border-radius: 5px;
-    padding: 15px 30px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    position: fixed; /* Зафиксировано на экране */
-    bottom: 20px; /* Расположение в нижнем левом углу */
+    position: fixed;
+    top: 20px; /* Расположение в верхнем левом углу */
     left: 20px;
     z-index: 1000;
+    font-size: 40px; /* Увеличенный размер стрелки */
+    color: black; /* Черный цвет */
 }
 
 .back-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1); /* Увеличение при наведении */
+}
+
+/* Стрелка "Назад" */
+.back-button::before {
+    content: '←'; /* Символ стрелки */
+    font-size: 40px; /* Размер стрелки */
+    color: black; /* Черный цвет */
+}
+
+/* Убираем текст */
+.back-button::after {
+    content: ''; /* Убираем лишнее */
 }
 
 footer {
@@ -172,19 +170,33 @@ footer {
     border-radius: 10px;
 }
 
-/* Вторая рамка на главной странице */
-.main-border {
-    border: 2px solid #007bff; /* Вторая рамка на главной странице */
-    border-radius: 10px;
-    padding: 20px; /* Отступы внутри рамки */
+.order-info {
+    text-align: center;
+    margin: 20px 0;
 }
 
-/* Анимация для отзывов */
-.review-card {
+.product-description {
+    font-size: 1.2em;
     border: 1px solid #007bff;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.5s ease;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Изменения для страницы заказа */
+.product-image-order {
+    width: 80%; /* Увеличена ширина изображения для лучшего отображения */
+    max-width: 300px; /* Максимальная ширина */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    margin: 0 auto; /* Центрирование изображения */
+    border-radius: 10px;
+    margin-bottom: 15px; /* Отступ снизу изображения */
+}
+
+/* Общее стилизованное описание на странице заказа */
+.order-description {
+    text-align: center; /* Центрируем текст */
+    margin-top: 10px; /* Отступ сверху */
 }
