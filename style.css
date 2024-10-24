@@ -96,12 +96,12 @@ header {
 }
 
 .product-image {
-    width: 80%; /* Увеличена ширина изображения для лучшего отображения */
-    max-width: 300px; /* Максимальная ширина */
-    height: auto; /* Автоматическая высота для сохранения пропорций */
-    margin: 0 auto; /* Центрирование изображения */
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
     border-radius: 10px;
-    margin-bottom: 10px; /* Отступ снизу изображения */
+    margin-bottom: 10px;
 }
 
 .product-image:hover {
@@ -131,10 +131,11 @@ header {
     transform: scale(1.05);
 }
 
-/* Изменения для кнопки назад */
+/* Стиль для кнопки "Назад" с белой рамкой и анимацией */
 .back-button {
     background-color: transparent;
-    border: none;
+    border: 2px solid white; /* Белая рамка */
+    border-radius: 50%; /* Круглая форма */
     cursor: pointer;
     position: fixed;
     top: 20px; /* Расположение в верхнем левом углу */
@@ -142,22 +143,43 @@ header {
     z-index: 1000;
     font-size: 40px; /* Увеличенный размер стрелки */
     color: black; /* Черный цвет */
+    padding: 10px; /* Отступы вокруг стрелки */
+    transition: transform 0.3s, box-shadow 0.3s; /* Анимация */
 }
 
 .back-button:hover {
     transform: scale(1.1); /* Увеличение при наведении */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Светящийся эффект */
 }
 
-/* Стрелка "Назад" */
-.back-button::before {
-    content: '←'; /* Символ стрелки */
-    font-size: 40px; /* Размер стрелки */
-    color: black; /* Черный цвет */
+/* Для изображений на странице заказа */
+.product-image-order {
+    width: 80%; /* Увеличена ширина изображения для лучшего отображения */
+    max-width: 300px; /* Максимальная ширина */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    margin: 0 auto; /* Центрирование изображения */
+    border-radius: 10px;
+    margin-bottom: 15px; /* Отступ снизу изображения */
+    display: block; /* Убедимся, что изображение блочное */
 }
 
-/* Убираем текст */
-.back-button::after {
-    content: ''; /* Убираем лишнее */
+/* Увеличенное и красивое описание для товара */
+.product-description {
+    font-size: 1.5em; /* Увеличенный размер шрифта */
+    border: 1px solid #007bff;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-align: center; /* Центрирование текста */
+    color: #333; /* Темный цвет текста */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    transition: transform 0.3s; /* Анимация */
+}
+
+.product-description:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
 }
 
 footer {
@@ -173,30 +195,4 @@ footer {
 .order-info {
     text-align: center;
     margin: 20px 0;
-}
-
-.product-description {
-    font-size: 1.2em;
-    border: 1px solid #007bff;
-    border-radius: 10px;
-    padding: 15px;
-    background-color: #f8f9fa;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-/* Изменения для страницы заказа */
-.product-image-order {
-    width: 80%; /* Увеличена ширина изображения для лучшего отображения */
-    max-width: 300px; /* Максимальная ширина */
-    height: auto; /* Автоматическая высота для сохранения пропорций */
-    margin: 0 auto; /* Центрирование изображения */
-    border-radius: 10px;
-    margin-bottom: 15px; /* Отступ снизу изображения */
-}
-
-/* Общее стилизованное описание на странице заказа */
-.order-description {
-    text-align: center; /* Центрируем текст */
-    margin-top: 10px; /* Отступ сверху */
 }

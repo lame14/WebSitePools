@@ -50,7 +50,7 @@
             <button class="order-button" onclick="submitOrder()">Замовити</button>
         </div>
 
-        <button class="back-button" onclick="navigateTo('products')">&#8592;</button> <!-- Стрелка влево -->
+        <button class="back-button" onclick="navigateTo('products')">⬅️</button> <!-- Стрелка назад -->
     </main>
 
     <footer>
@@ -80,8 +80,7 @@
             alert(`Ваше замовлення на ${quantity} ${product} з глибиною ${depth} м успішно оформлено!`);
         }
 
-        // Обновляем информацию о продукте при загрузке страницы
-        window.onload = updateProductInfo;
+        window.onload = updateProductInfo; // Обновляем информацию при загрузке страницы
     </script>
 </body>
 </html>
