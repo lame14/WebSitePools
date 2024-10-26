@@ -3,36 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Про нас - Магазин товарів</title>
+    <title>Історія компанії SwimmingPools</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center; /* Центрируем заголовок */
-            font-size: 36px; /* Увеличиваем размер заголовка */
-            margin-bottom: 20px; /* Отступ снизу для заголовка */
-        }
-        .bio {
-            background-color: #ffffff; /* Цвет фона для блока с биографией */
-            border-radius: 5px; /* Скругление углов */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
-            padding: 20px; /* Отступы внутри блока */
-            max-width: 600px; /* Максимальная ширина блока */
-            margin: 0 auto; /* Центрируем блок */
-            line-height: 1.6; /* Интерлиньяж для удобства чтения */
-        }
-        .bio p {
-            font-size: 16px; /* Размер шрифта */
-            color: #555; /* Цвет текста */
-        }
+        /* Добавляем стиль для кнопки "Назад" */
         .back-button {
-            display: block; /* Кнопка возвращения на предыдущую страницу */
-            margin: 20px auto 0; /* Отступы */
+            display: block;
+            margin: 20px auto; /* Центрируем кнопку */
             padding: 10px 20px; /* Отступы внутри кнопки */
             background-color: #007bff; /* Цвет кнопки */
             color: white; /* Цвет текста */
@@ -41,24 +18,60 @@
             text-align: center; /* Выравнивание текста */
             text-decoration: none; /* Убираем подчеркивание */
             font-size: 18px; /* Размер шрифта */
-            transition: background-color 0.3s; /* Переход при наведении */
+            transition: background-color 0.3s, transform 0.3s; /* Анимация */
         }
+
         .back-button:hover {
             background-color: #0056b3; /* Цвет кнопки при наведении */
+            transform: scale(1.05); /* Увеличение при наведении */
+        }
+
+        .story-container {
+            line-height: 1.6; /* Интерлиньяж для удобства чтения */
+            margin: 20px; /* Отступы вокруг текста */
+            padding: 20px; /* Внутренние отступы */
+            background-color: #f8f9fa; /* Цвет фона */
+            border-radius: 5px; /* Скругление углов */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo-container">
+            <img src="depositphotos_23428992-stock-illustration-a-swimming-pool-removebg-preview(1).png" alt="Логотип" class="logo-img">
+            <h1 class="logo-text">SwimmingPools</h1>
+        </div>
+        <nav class="navbar">
+            <button onclick="navigateTo('index')" class="nav-button">Головна</button>
+            <button onclick="navigateTo('products')" class="nav-button">Товари</button>
+            <button onclick="navigateTo('about')" class="nav-button">Про нас</button>
+        </nav>
+    </header>
 
-    <h1>Про нашу компанію</h1>
+    <main>
+        <h2>Історія нашої компанії</h2>
+        <div class="story-container">
+            <p>Компанія <strong>SwimmingPools</strong> була заснована в 2010 році групою ентузіастів, які мріяли створити унікальні простори для відпочинку та розваг. З самого початку ми зосередились на якості, інноваціях і наданні найкращого обслуговування клієнтів.</p>
 
-    <div class="bio">
-        <p>Вітаємо вас у світі "Swimming Pools"! Наша компанія спеціалізується на проектуванні та встановленні басейнів, які ідеально впишуться у ваш ландшафт та створять атмосферу відпочинку та релаксації. Ми працюємо з кращими матеріалами та найсучаснішими технологіями, щоб забезпечити вам найвищу якість послуг.</p>
-        <p>Наша команда складається з досвідчених фахівців, які прагнуть досягти досконалості в кожному проекті. Ми вважаємо, що ваш басейн — це не просто конструкція, а справжній оазис для вас та вашої родини.</p>
-        <p>Дякуємо, що обрали "Swimming Pools". Ми раді стати частиною вашого відпочинку!</p>
-    </div>
+            <p>Наші перші проекти включали невеликі приватні басейни, але з часом ми розширили свої можливості і почали працювати над великими комерційними проектами. Завдяки високому рівню майстерності нашої команди, ми здобули репутацію надійного партнера в галузі.</p>
 
-    <a href="index.html" class="back-button">Повернутися назад</a> <!-- Кнопка для повернення на главную страницу -->
+            <p>Протягом років <strong>SwimmingPools</strong> реалізувала тисячі проектів, від простих басейнів до розкішних комплексів, що поєднують в собі водні атракціони, спа та зони для відпочинку. Ми завжди слідкуємо за новими тенденціями та технологіями, щоб забезпечити нашим клієнтам найкращі рішення.</p>
 
+            <p>Сьогодні <strong>SwimmingPools</strong> — це не просто компанія, це спільнота людей, які прагнуть створити ідеальні умови для відпочинку. Ми дякуємо всім нашим клієнтам за довіру і чекаємо на можливість реалізувати вашу мрію про ідеальний басейн!</p>
+        </div>
+
+        <button class="back-button" onclick="navigateTo('index')">⬅️    </button>
+    </main>
+
+    <footer>
+        <p>© 2024 SwimmingPools. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page + '.html'; // Переход на іншу сторінку
+        }
+    </script>
 </body>
 </html>

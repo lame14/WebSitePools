@@ -5,6 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Головна</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e9ecef, #007bff);
+            margin: 0;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            display: block;
+            text-align: center;
+            background-color: #007bff;
+            padding: 30px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .reviews-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .review-card {
+            background-color: #ffffff; /* Цвет фона для блока с отзывом */
+            border: 1px solid #ddd; /* Рамка для отзыва */
+            border-radius: 10px; /* Скругление углов */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+            padding: 15px;
+            margin: 10px auto; /* Отступ между отзывами и выравнивание по центру */
+            max-width: 500px; /* Максимальная ширина блока */
+            width: 100%; /* Ширина блока */
+        }
+
+        .review-card p {
+            margin: 0;
+            color: #555;
+        }
+
+        .rating {
+            display: block;
+            margin-top: 10px; /* Отступ сверху для рейтинга */
+            color: #ffcc00; /* Цвет для звезд */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #0056b3;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -35,6 +112,14 @@
             </div>
             <div class="review-card">
                 <p>Басейн був доставлений вчасно. Рекомендуємо!</p>
+                <span class="rating">⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="review-card">
+                <p>Дякую за чудовий продукт і швидке обслуговування!</p>
+                <span class="rating">⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="review-card">
+                <p>Прекрасний досвід! Басейн став улюбленим місцем нашої родини.</p>
                 <span class="rating">⭐⭐⭐⭐⭐</span>
             </div>
         </section>
