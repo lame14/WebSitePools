@@ -1,6 +1,9 @@
+/* Основные стили */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #e9ecef, #007bff);
+    background-size: 200% 200%; /* Для анимации */
+    animation: backgroundAnimation 10s ease infinite; /* Запуск анимации */
     margin: 0;
     padding: 20px;
     animation: fadeIn 1s ease-in-out;
@@ -12,6 +15,18 @@ body {
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
 
@@ -55,9 +70,9 @@ header {
 }
 
 .nav-button {
-    background-color: white;
-    color: #007bff;
-    border: 2px solid #007bff;
+    background: linear-gradient(45deg, #007bff, #0056b3); /* Градиент */
+    color: white; /* Белый цвет текста */
+    border: none; /* Убираем рамку */
     border-radius: 5px;
     padding: 10px 20px;
     margin-left: 10px;
@@ -67,7 +82,6 @@ header {
 
 .nav-button:hover {
     background-color: #0056b3;
-    color: white;
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -86,13 +100,33 @@ header {
     text-align: center;
     margin: 10px;
     background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Более заметная тень */
     width: calc(33.333% - 20px);
     height: 450px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.3s;
+    animation: fadeInUp 0.5s ease forwards; /* Применение анимации */
+    opacity: 0; /* Начальная прозрачность */
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.product-card:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Светлое затемнение */
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Увеличенная тень */
 }
 
 .product-image {
@@ -102,6 +136,7 @@ header {
     margin: 0 auto;
     border-radius: 10px;
     margin-bottom: 10px;
+    transition: transform 0.3s;
 }
 
 .product-image:hover {
@@ -115,8 +150,9 @@ header {
 }
 
 .order-button {
-    background-color: #28a745;
-    color: white;
+    position: relative; /* Для анимации */
+    background: linear-gradient(45deg, #28a745, #218838); /* Градиент для кнопки заказа */
+    color: white; /* Белый цвет текста */
     border: none;
     border-radius: 5px;
     padding: 15px 30px;
@@ -126,15 +162,32 @@ header {
     margin-top: auto;
 }
 
+.order-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 167, 69, 0.5); /* Полупрозрачный фон */
+    border-radius: 5px;
+    transform: scale(0);
+    transition: transform 0.3s;
+    z-index: 0; /* На заднем плане */
+}
+
 .order-button:hover {
     background-color: #218838;
     transform: scale(1.05);
 }
 
-/* Стиль для кнопки "Назад" с белой рамкой и анимацией */
+.order-button:hover::after {
+    transform: scale(1); /* Разрастание фона при наведении */
+}
+
 .back-button {
-    background-color: transparent;
-    border: 2px solid white; /* Белая рамка */
+    background-color: #007bff; /* Синяя фон */
+    border: none; /* Убираем рамку */
     border-radius: 50%; /* Круглая форма */
     cursor: pointer;
     position: fixed;
@@ -142,14 +195,16 @@ header {
     left: 20px;
     z-index: 1000;
     font-size: 40px; /* Увеличенный размер стрелки */
-    color: black; /* Черный цвет */
-    padding: 10px; /* Отступы вокруг стрелки */
-    transition: transform 0.3s, box-shadow 0.3s; /* Анимация */
+    color: white; /* Белый цвет текста */
+    padding: 15px; /* Отступы вокруг стрелки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Анимация */
 }
 
 .back-button:hover {
     transform: scale(1.1); /* Увеличение при наведении */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Светящийся эффект */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5); /* Светящийся эффект */
+    background-color: #0056b3; /* Темный фон при наведении */
 }
 
 /* Для изображений на странице заказа */
@@ -188,11 +243,42 @@ footer {
     padding: 20px;
     background-color: #0056b3;
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Тень сверху */
+    border-top: 5px solid #007bff; /* Верхняя граница */
 }
 
-.order-info {
+/* Стиль для адаптивности */
+@media (max-width: 768px) {
+    .product-card {
+        width: calc(50% - 20px); /* Две карточки на строку */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 100%; /* Одна карточка на строку */
+    }
+
+    .back-button {
+        font-size: 30px; /* Уменьшенный размер кнопки "Назад" */
+        padding: 10px; /* Уменьшенные отступы */
+    }
+}
+
+/* Стиль для блока заказа */
+.order-summary {
+    border: 1px solid #007bff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Стиль для заголовков секций */
+.section-title {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 20px;
     text-align: center;
-    margin: 20px 0;
 }

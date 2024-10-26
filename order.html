@@ -6,7 +6,7 @@
     <title>Замовлення</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Вставьте стиль для кнопки "Назад" сюда */
+        /* Стиль для кнопки "Назад" */
         .back-button {
             background-color: transparent; /* Прозрачный фон */
             border: none; /* Убираем рамку */
@@ -15,11 +15,102 @@
             font-size: 30px; /* Размер стрелки */
             color: #007bff; /* Цвет стрелки */
             padding: 10px; /* Отступы вокруг стрелки */
-            transition: background-color 0.3s; /* Плавный переход цвета */
+            transition: background-color 0.3s, transform 0.3s; /* Плавный переход цвета и анимация */
+            position: fixed; /* Фиксированное положение */
+            top: 20px; /* Расположение в верхнем левом углу */
+            left: 20px; /* Расположение в левом углу */
+            z-index: 1000; /* Поверх остальных элементов */
         }
 
         .back-button:hover {
             background-color: #e9ecef; /* Цвет при наведении */
+            transform: scale(1.1); /* Увеличение при наведении */
+        }
+
+        /* Основные стили для главной секции */
+        main {
+            text-align: center; /* Центрирование текста */
+            margin-top: 20px; /* Отступ сверху */
+            animation: fadeIn 1s ease-in-out; /* Плавная анимация при загрузке */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0; /* Начальная прозрачность */
+            }
+            to {
+                opacity: 1; /* Конечная прозрачность */
+            }
+        }
+
+        .order-form {
+            background-color: #f8f9fa; /* Светлый фон формы */
+            padding: 20px; /* Отступы внутри формы */
+            border-radius: 10px; /* Закругленные углы */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+            margin-top: 20px; /* Отступ сверху */
+            display: inline-block; /* Внутренний блочный элемент */
+        }
+
+        label {
+            display: block; /* Блочный элемент для меток */
+            margin: 10px 0 5px; /* Отступы вокруг меток */
+            font-size: 1.2em; /* Увеличенный размер шрифта */
+        }
+
+        select, input[type="number"] {
+            width: 100%; /* Ширина 100% для удобства */
+            padding: 10px; /* Отступы внутри поля */
+            margin: 5px 0; /* Отступы сверху и снизу */
+            border-radius: 5px; /* Закругленные углы */
+            border: 2px solid #007bff; /* Синяя рамка */
+            font-size: 1em; /* Размер шрифта */
+            transition: border-color 0.3s; /* Плавный переход цвета рамки */
+        }
+
+        select:hover, input[type="number"]:hover {
+            border-color: #0056b3; /* Темный цвет рамки при наведении */
+        }
+
+        .order-button {
+            background-color: #28a745; /* Зеленый фон */
+            color: white; /* Белый текст */
+            border: none; /* Убираем рамку */
+            border-radius: 5px; /* Закругленные углы */
+            padding: 15px 30px; /* Отступы */
+            cursor: pointer; /* Указатель при наведении */
+            transition: background-color 0.3s, transform 0.3s; /* Плавный переход */
+            font-size: 1.2em; /* Размер шрифта */
+            margin-top: 20px; /* Отступ сверху */
+        }
+
+        .order-button:hover {
+            background-color: #218838; /* Темный фон при наведении */
+            transform: scale(1.05); /* Увеличение при наведении */
+        }
+
+        .order-info {
+            text-align: center; /* Центрирование текста */
+            margin: 20px 0; /* Отступы сверху и снизу */
+        }
+
+        .product-image-order {
+            width: 80%; /* Ширина изображения */
+            max-width: 300px; /* Максимальная ширина */
+            height: auto; /* Автоматическая высота */
+            margin: 0 auto; /* Центрирование */
+            border-radius: 10px; /* Закругленные углы */
+            margin-bottom: 15px; /* Отступ снизу */
+        }
+
+        footer {
+            text-align: center; /* Центрирование текста */
+            margin-top: 20px; /* Отступ сверху */
+            padding: 20px; /* Отступы внутри */
+            background-color: #0056b3; /* Темный фон */
+            color: white; /* Белый текст */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+            border-radius: 10px; /* Закругленные углы */
         }
     </style>
 </head>

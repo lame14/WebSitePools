@@ -45,20 +45,69 @@
             }
         }
 
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-img {
+            max-width: 120px;
+            height: auto;
+        }
+
+        .logo-text {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .nav-button {
+            background-color: white;
+            color: #007bff;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: bold;
+        }
+
+        .nav-button:hover {
+            background-color: #0056b3;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .hero-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .welcome-heading {
+            font-size: 2em;
+            color: #0056b3;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
         .reviews-section {
             margin-top: 20px;
             text-align: center;
         }
 
         .review-card {
-            background-color: #ffffff; /* Цвет фона для блока с отзывом */
-            border: 1px solid #ddd; /* Рамка для отзыва */
-            border-radius: 10px; /* Скругление углов */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             padding: 15px;
-            margin: 10px auto; /* Отступ между отзывами и выравнивание по центру */
-            max-width: 500px; /* Максимальная ширина блока */
-            width: 100%; /* Ширина блока */
+            margin: 10px auto;
+            max-width: 500px;
+            width: 90%;
         }
 
         .review-card p {
@@ -68,8 +117,9 @@
 
         .rating {
             display: block;
-            margin-top: 10px; /* Отступ сверху для рейтинга */
-            color: #ffcc00; /* Цвет для звезд */
+            margin-top: 10px;
+            color: #ffcc00;
+            font-size: 1.2em;
         }
 
         footer {

@@ -27,6 +27,64 @@
         .back-button:hover {
             background-color: #e9ecef; /* Цвет при наведении */
         }
+
+        .products-section {
+            display: flex; /* Используем flexbox для расположения карточек товара */
+            flex-wrap: wrap; /* Позволяем карточкам переноситься на следующую строку */
+            justify-content: center; /* Центрируем карточки */
+            margin: 20px 0; /* Отступы сверху и снизу */
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column; /* Вертикальное расположение элементов внутри карточки */
+            border: 1px solid #ccc; /* Рамка вокруг карточки */
+            border-radius: 10px; /* Скругление углов карточки */
+            margin: 15px; /* Отступы вокруг карточки */
+            padding: 10px; /* Отступы внутри карточки */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Центрируем текст внутри карточки */
+            transition: transform 0.2s; /* Плавный эффект при наведении */
+            width: calc(33.33% - 30px); /* Установка ширины для трех карточек в ряд с учетом отступов */
+        }
+
+        .product-card:hover {
+            transform: scale(1.05); /* Эффект увеличения при наведении */
+        }
+
+        .price {
+            font-size: 1.2em;
+            color: #28a745; /* Зеленый цвет для цены */
+            margin: 10px 0; /* Отступы для цены */
+        }
+
+        .order-button {
+            background-color: #007bff; /* Цвет кнопки "Замовити" */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s; /* Плавный переход для фона и увеличения */
+            padding: 10px; /* Отступы для кнопки */
+            width: 100%; /* Ширина кнопки на всю ширину карточки */
+        }
+
+        .order-button:hover {
+            background-color: #0056b3; /* Цвет при наведении */
+            transform: scale(1.05); /* Эффект увеличения при наведении */
+        }
+
+        @media (max-width: 768px) {
+            .product-card {
+                width: calc(50% - 30px); /* Два товара в ряд на меньших экранах */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: calc(100% - 30px); /* Один товар в ряд на маленьких экранах */
+            }
+        }
     </style>
 </head>
 <body>
@@ -47,40 +105,46 @@
         </section>
 
         <section class="products-section">
-            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+            <div class="product-card">
                 <img src="images (2).jpg" alt="Товар 1" class="product-image">
                 <h3>Товар 1</h3>
                 <p class="price">$100</p>
+                <p>Опис: Цей чудовий басейн ідеально підійде для вашого подвір'я, створюючи комфортне місце для відпочинку в спекотні дні.</p>
                 <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
-            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+            <div class="product-card">
                 <img src="форма 2.jpg" alt="Товар 2" class="product-image">
                 <h3>Товар 2</h3>
                 <p class="price">$150</p>
+                <p>Опис: З цим басейном ви отримаєте можливість насолоджуватися водними розвагами разом з родиною та друзями!</p>
                 <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
-            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+            <div class="product-card">
                 <img src="Форма 3.png" alt="Товар 3" class="product-image">
                 <h3>Товар 3</h3>
                 <p class="price">$200</p>
+                <p>Опис: Цей стильний басейн стане яскравим акцентом у вашому саду та додасть елегантності вашому простору.</p>
                 <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
-            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+            <div class="product-card">
                 <img src="pool 4.jpg" alt="Товар 4" class="product-image">
                 <h3>Товар 4</h3>
                 <p class="price">$250</p>
+                <p>Опис: Ідеальний вибір для великих сімей, цей басейн дозволяє проводити час на воді весело і безпечно.</p>
                 <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
-            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+            <div class="product-card">
                 <img src="pool 5.webp" alt="Товар 5" class="product-image">
                 <h3>Товар 5</h3>
                 <p class="price">$300</p>
+                <p>Опис: Насолоджуйтеся розкішшю та комфортом з цим басейном, що ідеально підходить для розваг в літній сезон.</p>
                 <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
-            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+            <div class="product-card">
                 <img src="pool 6.jpg" alt="Товар 6" class="product-image">
                 <h3>Товар 6</h3>
                 <p class="price">$350</p>
+                <p>Опис: Відмінний вибір для тих, хто хоче створити ідеальне місце для відпочинку на свіжому повітрі.</p>
                 <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
         </section>
