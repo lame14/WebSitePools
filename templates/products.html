@@ -105,48 +105,7 @@
         </section>
 
         <section class="products-section">
-            <div class="product-card">
-                <img src="images (2).jpg" alt="Товар 1" class="product-image">
-                <h3>Товар 1</h3>
-                <p class="price">$200</p>
-                <p>Опис: Цей чудовий басейн ідеально підійде для вашого подвір'я, створюючи комфортне місце для відпочинку в спекотні дні.</p>
-                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
-            </div>
-            <div class="product-card">
-                <img src="форма 2.jpg" alt="Товар 2" class="product-image">
-                <h3>Товар 2</h3>
-                <p class="price">$400</p>
-                <p>Опис: З цим басейном ви отримаєте можливість насолоджуватися водними розвагами разом з родиною та друзями!</p>
-                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
-            </div>
-            <div class="product-card">
-                <img src="Форма 3.png" alt="Товар 3" class="product-image">
-                <h3>Товар 3</h3>
-                <p class="price">$600</p>
-                <p>Опис: Цей стильний басейн стане яскравим акцентом у вашому саду та додасть елегантності вашому простору.</p>
-                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
-            </div>
-            <div class="product-card">
-                <img src="pool 4.jpg" alt="Товар 4" class="product-image">
-                <h3>Товар 4</h3>
-                <p class="price">$1200</p>
-                <p>Опис: Ідеальний вибір для великих сімей, цей басейн дозволяє проводити час на воді весело і безпечно.</p>
-                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
-            </div>
-            <div class="product-card">
-                <img src="pool 5.webp" alt="Товар 5" class="product-image">
-                <h3>Товар 5</h3>
-                <p class="price">$1600</p>
-                <p>Опис: Насолоджуйтеся розкішшю та комфортом з цим басейном, що ідеально підходить для розваг в літній сезон.</p>
-                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
-            </div>
-            <div class="product-card">
-                <img src="pool 6.jpg" alt="Товар 6" class="product-image">
-                <h3>Товар 6</h3>
-                <p class="price">$3200</p>
-                <p>Опис: Відмінний вибір для тих, хто хоче створити ідеальне місце для відпочинку на свіжому повітрі.</p>
-                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
-            </div>
+            {% block content %}{% endblock %}
         </section>
 
         <button class="back-button" onclick="navigateTo('index')">⬅️</button> <!-- Стрелка назад -->

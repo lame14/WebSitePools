@@ -37,9 +37,11 @@ cursor.execute(insert_request, ("бассейн 4", "Ідеальний вибі
 cursor.execute(insert_request, ("бассейн 5", "Насолоджуйтеся розкішшю та комфортом з цим басейном, що ідеально підходить для розваг в літній сезон.", "$1600", "2m", "pool 5.webp"))
 cursor.execute(insert_request, ("бассейн 6", "Відмінний вибір для тих, хто хоче створити ідеальне місце для відпочинку на свіжому повітрі.", "$3200", "2m", "pool 6.jpg"))
 
+connection.commit()
+
 # Додавання товарів до кошика для прикладу
-cursor.execute("INSERT INTO shopping_cart (product_id, quantity) VALUES (1, 1)")
-cursor.execute("INSERT INTO shopping_cart (product_id, quantity) VALUES (2, 2)")
+cursor.execute("INSERT INTO shopping_cart (product_id, quantity) VALUES ()")
+cursor.execute("INSERT INTO shopping_cart (product_id, quantity) VALUES ()")
 
 # Виведення всіх товарів з таблиці products
 text = cursor.execute("SELECT * FROM products")
